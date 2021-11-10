@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/prism.css"/> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"> -->
+    <link rel="shortcut icon" type="image/jpg" href="../../static/img/logo/Favicon/favicon.ico"/>
+    <title>Project: Nicanne - Tarvs' Hobbytronics</title>
+</head>
+
+<body>
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-dark fixed-top bg-dark">
+    <div class="container-fluid mb-3">
+        <a class="navbar-brand" href="../../index.html">
+            <img class="d-inline-block align-center" src="../../static/img/logo/social_media/LinkedIn/profile.png" alt="logo" width="50" height="50">
+        </a>
+        <a class="navbar-brand" href="../../index.html">Tarvs' Hobbytronics</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../projects/home.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../tutorials/home.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../blogs/home.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT HERE -->
+<main class="container-fluid row mb-3">
+
+<!-- Table of Contents -->
+<div class="col-md-2">
+<div class="leftpanel">
+<a href="../home.html"><button type="button", class="btn btn-outline-primary">List of Projects</button></a>
+<hr/>
+<div class="tableofcontents btn-group dropend">
+<button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table of Contents</button>
+
+<!-- IMPORTANT: Table of contents will be auto generated here -->
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#I.">I. Overview</a></li>
+<li><a class="dropdown-item" href="#I.A.">I.A. Target Application and Target Audience</a></li>
+<li><a class="dropdown-item" href="#I.B.">I.B. Feature Images</a></li>
+<li><a class="dropdown-item" href="#I.C.">I.C. Specification</a></li>
+<li><a class="dropdown-item" href="#II.">II. System Block Diagram</a></li>
+<li><a class="dropdown-item" href="#II.A.">II.A. Guitar Section</a></li>
+<li><a class="dropdown-item" href="#II.B.">II.B. Aux Section</a></li>
+<li><a class="dropdown-item" href="#II.C.">II.C. Power Amplifier Section</a></li>
+<li><a class="dropdown-item" href="#II.D.">II.D. Power Supply Section</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<!-- IMPORTANT: Main content will be auto generated here-->
+<div class="main-content col-md-10">
+<h1 id='project-nicanne-class-d-guitar-amplifier-series'>Project Nicanne: Class D Guitar Amplifier Series</h1>
+<br>
+
+<figure><table class="table table-striped">
+<thead>
+<tr><th>Author</th><th>Mark Angelo Tarvina</th></tr></thead>
+<tbody><tr><td>Email</td><td><a href='mailto:mttarvina@gmail.com' target='_blank' class='url'>mttarvina@gmail.com</a></td></tr><tr><td>Date Published</td><td>&nbsp;</td></tr><tr><td>Last Updated</td><td>&nbsp;</td></tr></tbody>
+</table></figure>
+
+<br><br>
+<h2 id="I.">I. Overview</h2><p class="text-justify"><em><strong>Nicanne</strong></em> is the codename for all my guitar amplifier projects. Audio power amplifiers were the first type of projects I ever worked on since undergrad. I started with pure transistor implementations of class A/B/AB amplifiers and eventually shifted to class D. Now I prefer class D amplifiers due to more efficient power consumption, can be designed and implemented in smaller board sizes, and less heat dissipation.</p>
+<p class="text-justify">The design of <em><strong>Nicanne</strong></em> is based on the TPA3116D2 Filter-Free Class-D Stereo Amplifier Family IC from Texas Instruments. This means that the board could have 3 possible variants based on the variants available for the said IC. For the 100W version, one can install the TPA3116D2 IC on the board. For the 60W version, install the TPA3118D2. For the 30W version, install the TPA3130D2. The stereo output is set to operate in parallel in order to drive one speaker.</p>
+<p class="text-justify"><em><strong>Nicanne</strong></em> has a dedicated guitar channel with built-in overdrive and distortion feature, an adjustable gain, and a 2 band equalizer for bass or treble frequency adjustment. A separate Aux channel can be used to input line audio from sources like MP3 players, smartphones, and PC/laptop devices through a TRS stereo connector. The combination of both channels is ideal for a solo guitar practice session with background music.</p>
+<p class="text-justify">This documentation describes the full capability of the device, the design of circuit blocks, as well as practical test results. If you have comments/suggestions, feel free to send me an email in my address above.</p>
+
+<br><br>
+<h3 id="I.A.">I.A. Target Application and Target Audience</h3><p class="text-justify">This project is meant for casual guitar players like me who are interested in how the electronics equipment between the guitar and the speaker works. This is meant for those who want a simple practice guitar amplifier that can be powered by a battery, with built-in features dedicated for guitar audio. Some aspects of the design of the guitar channel section in this project can also be used when designing guitar pedals, so for those who are interested in making their DIY pedals, I hope you can get something out of this. When it comes to audio quality output, I&#39;ll leave it to my demo videos. Personally, this sounds great to me, and there is no point in more tweaks to achieve something I cannot perceive anyway.  </p>
+<br><br>
+<h3 id="I.B.">I.B. Feature Images</h3>
+<br><br>
+<h3 id="I.C.">I.C. Specification</h3><figure><table class="table table-striped">
+<thead>
+<tr><th>Parameter</th><th>Value</th></tr></thead>
+<tbody><tr><td>Hardware Name</td><td>Nicanne</td></tr><tr><td>Hardware Revision</td><td>F</td></tr><tr><td>Hardware Design</td><td><a href="./pdf/Nicanne_RevF.pdf" target="_blank" rel="noopener noreferrer">Nicanne_RevF</a></td></tr><tr><td>PCB Dimension</td><td><a href="./pdf/Nicanne_RevF_PCB_Dimension.pdf" target="_blank" rel="noopener noreferrer">Nicanne_RevF_PCB_Dimension</a></td></tr><tr><td>Power Output</td><td>30W/60W/100W</td></tr><tr><td>Number of output channels</td><td>1</td></tr><tr><td>Compatible Speakers</td><td>4Ohm/8Ohm/16Ohm (Full Range)</td></tr><tr><td>Power Amplifier Type</td><td>Class D</td></tr><tr><td>Input Voltage Supply Range</td><td>9V - 26V DC</td></tr><tr><td>Auxiliary - Channel(s)</td><td>1</td></tr><tr><td>Auxiliary - Line Input Connection</td><td>Stereo TRS Plug</td></tr><tr><td>Guitar - Channel(s)</td><td>1</td></tr><tr><td>Guitar - Buffer</td><td>Yes</td></tr><tr><td>Guitar - Pre Boost</td><td>Yes</td></tr><tr><td>Guitar - Pre Boost Gain</td><td>12dB - fixed</td></tr><tr><td>Guitar - Overdrive w/ enable switch</td><td>Yes</td></tr><tr><td>Guitar - Distortion w/ enable switch</td><td>Yes</td></tr><tr><td>Guitar - Low Frequency Cutoff Switch (for distortion/overdrive FX)</td><td>Yes (@ insert frequency)</td></tr><tr><td>Guitar - Gain Adjust</td><td>0dB - 28dB</td></tr><tr><td>Guitar - Bass Boost/Cut @ 1kHz cutoff</td><td>Yes, +/-12dB</td></tr><tr><td>Guitar - Treble Boost/Cut @ 1kHz cutoff</td><td>Yes, +/-12dB</td></tr></tbody>
+</table></figure>
+
+<br><br>
+<h2 id="II.">II. System Block Diagram</h2><p class="text-justify"><img class="mx-auto d-block img-fluid" src="img/Nicanne-RevF-System-Block-Diagram.png"  /></p>
+
+<p class="text-justify">The design consists of four main blocks:</p>
+<ul>
+<li>Guitar Section - covers the series of blocks from Buffer up to the 2-Band Equalizer</li>
+<li>Aux Section - covers both Left and Right channel line buffers and a mixer</li>
+<li>Power Amp Section - refers to the Class D Power Amplifier Block as well as the output speaker</li>
+<li>Power Supply Section - covers the input supply, VCC, and the reference voltage</li>
+
+</ul>
+
+<br><br>
+<h3 id="II.A.">II.A. Guitar Section</h3><p class="text-justify">The guitar section consists of basic circuit blocks that amplifies the guitar signal to a more usable level, comparable to line audio. The buffer is a high input impedance section with close to unity gain that compensates for the high output impedance property of most guitar output. The signal from the buffer is then amplified by a fixed gain pre-boost stage. The drive/gain stage is adjustable so that the user can control how high is the signal amplitude that appears at the input of the overdrive/distortion stage. The overdrive/distortion stage can be set to enable overdrive only, distortion only, or disable both. When both overdrive and distortion are disabled, this stage simply acts as a buffer to the drive/gain stage. Lastly, the 2 band equalizer is a combination of a low pass and high pass filter with a cut-off frequency of 1kHz. Both filters are capable of boosting or cutting off the signal within their respective pass band. The output of the whole guitar section is then fed into a mixer right before the power amplifier stage.</p>
+
+<br><br>
+<h3 id="II.B.">II.B. Aux Section</h3><p class="text-justify">The auxiliary section is simply a buffer for two channels of a stereo audio line input. These two channels are then mixed before being sent to the main mixer right before the power amplifier stage. There is no volume or gain control in this section. It is assumed that the input source for the auxiliary section is capable of increasing the amplitude of its output signal.</p>
+
+<br><br>
+<h3 id="II.C.">II.C. Power Amplifier Section</h3><p class="text-justify">The power amp section is mainly composed of the TPA3116D2 IC (for a 100W variant) with its minimum application requirement for a parallel output configuration. There is a main mixer present right before the audio input of the IC, which combines the signal from the guitar section and the auxiliary section.</p>
+
+<br><br>
+<h3 id="II.D.">II.D. Power Supply Section</h3><p class="text-justify">The power supply section provides power to all circuit blocks. The power amplifier section gets its supply directly from the input. Meanwhile, both the guitar and auxiliary section sources power from VCC, which is a more filtered version of the input supply. There is also a reference voltage equal to half of VCC that provides the reference level for the virtual ground used by all op-amps within the guitar and auxiliary section. The input supply can take input supply voltages between 9V and 26V DC.</p>
+
+
+
+
+
+<p class="text-justify"> </p>
+
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">Powered by: Github Pages</span>
+    </div>
+</footer>        
+
+<script src="../../static/js/bootstrap.bundle.min.js"></script>
+<script src="../../static/js/prism.js"></script>
+</body>
+</html>

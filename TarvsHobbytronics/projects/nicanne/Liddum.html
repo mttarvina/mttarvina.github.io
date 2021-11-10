@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/prism.css"/> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"> -->
+    <link rel="shortcut icon" type="image/jpg" href="../../static/img/logo/Favicon/favicon.ico"/>
+    <title>Project: Liddum - Tarvs' Hobbytronics</title>
+</head>
+
+<body>
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-dark fixed-top bg-dark">
+    <div class="container-fluid mb-3">
+        <a class="navbar-brand" href="../../index.html">
+            <img class="d-inline-block align-center" src="../../static/img/logo/social_media/LinkedIn/profile.png" alt="logo" width="50" height="50">
+        </a>
+        <a class="navbar-brand" href="../../index.html">Tarvs' Hobbytronics</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../projects/home.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../tutorials/home.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../blogs/home.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT HERE -->
+<main class="container-fluid row mb-3">
+
+<!-- Table of Contents -->
+<div class="col-md-2">
+<div class="leftpanel">
+<a href="../home.html"><button type="button", class="btn btn-outline-primary">List of Projects</button></a>
+<hr/>
+<div class="tableofcontents btn-group dropend">
+<button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table of Contents</button>
+
+<!-- IMPORTANT: Table of contents will be auto generated here -->
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#I.">I. Overview:</a></li>
+<li><a class="dropdown-item" href="#II.">II. Custom Node Communications API</a></li>
+<li><a class="dropdown-item" href="#II.A.">II.A. Registering new nodes to the network</a></li>
+<li><a class="dropdown-item" href="#II.B.">II.B. Controlling Node Actuators and Switches</a></li>
+<li><a class="dropdown-item" href="#II.C.">II.C. Getting Sensor Parameters from Node</a></li>
+<li><a class="dropdown-item" href="#III.">III. User Access: LAN Connected</a></li>
+<li><a class="dropdown-item" href="#III.A.">III.A. First Time Setup or Access</a></li>
+<li><a class="dropdown-item" href="#IV.">IV. Database Models</a></li>
+<li><a class="dropdown-item" href="#IV.A.">IV.A. Household</a></li>
+<li><a class="dropdown-item" href="#IV.B.">IV.B. Admin</a></li>
+<li><a class="dropdown-item" href="#IV.C.">IV.C. Connected_Nodes</a></li>
+<li><a class="dropdown-item" href="#IV.D.">IV.D. Standard_Node_Actuators</a></li>
+<li><a class="dropdown-item" href="#IV.E.">IV.E. Standard_Node_Sensors</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<!-- IMPORTANT: Main content will be auto generated here-->
+<div class="main-content col-md-10">
+<h1 id='project-liddum-personal-home-automation-system'>Project Liddum: Personal Home Automation System</h1>
+<br>
+
+<figure><table class="table table-striped">
+<thead>
+<tr><th>Author</th><th>Mark Angelo Tarvina [Tarvs&#39; Hobbytronics]</th></tr></thead>
+<tbody><tr><td>Email</td><td><a href='mailto:mttarvina@gmail.com' target='_blank' class='url'>mttarvina@gmail.com</a></td></tr><tr><td>Last Updated</td><td>14-Sep-21</td></tr></tbody>
+</table></figure>
+
+<br><br>
+<h2 id="I.">I. Overview:</h2><p class="text-justify"><em><strong>Liddum</strong> - the only deity who inhabits the realm called Kabunian; communicates directly with humans on earth; mediator between the people and other gods. [Mythological figure: Ifugao]</em></p>
+<p class="text-justify">Project Liddum is a personal Home Automation System deployed in a server machine connected to a household local area network. Uses custom API to emulate IoT communications between server machine and any node device.</p>
+<figure><table class="table table-striped">
+<thead>
+<tr><th>Parameter</th><th>Value</th></tr></thead>
+<tbody><tr><td>Web Server Framework</td><td>Flask, Python</td></tr><tr><td>Web Server Machine</td><td>Raspberry Pi 4 or Raspberry Pi Zero W</td></tr><tr><td>Web Server IP</td><td>Static</td></tr><tr><td>Web Server Port</td><td>Static/Can be user modified</td></tr><tr><td>Node Controller</td><td>Raspberry Pi Zero W (Type: Standard), ESP32/ESP8266 (Type: Mini)</td></tr><tr><td>Node Hardware Rev</td><td>A</td></tr></tbody>
+</table></figure>
+
+<br><br>
+<h2 id="II.">II. Custom Node Communications API</h2><p class="text-justify">Custom APIs were developed to establish communication between Server and Node. In the current approach, the Node is the one constantly initiating the communication and the Server may either respond or just accept data based on the type of API used by the Node. The method on how the Node communicates to the server is by constructing pattern based URLs that contain data or specific command within the URL path. This URL may or may not exist in the server itself as an actual HTML page but the server will be able to detect predefined patterns in the URL that the Node is trying to access. The Server will then respond accordingly.</p>
+
+<br><br>
+<h3 id="II.A.">II.A. Registering new nodes to the network</h3><p class="text-justify">When a new node is added to the network, it should send an HTTP request to the server and embed the correct register key to the URL together with all relevant device information related to the Node hardware. If the Server determines that the register key is correct, then the Server responds by giving that Node a unique access key to be used only by that Node. The register key is preconfigured by the Admin user.</p>
+<p class="text-justify">When registering, the whole URL pattern should look like this:</p>
+<pre><code class='language-http' lang='http'>&lt;server_ip&gt;:&lt;server_port&gt;/&lt;householdName&gt;/node/register/&lt;registerKey&gt;/&lt;nodeType&gt;/&lt;hardwareRev&gt;/&lt;nodeName&gt;
+</code></pre>
+<p class="text-justify">The server response will be in a JSON formatted data that should look like this:</p>
+<pre><code class='language-json' lang='json'>{
+    &quot;node&quot;: {
+        &quot;name&quot;: &quot;&lt;nodeName&gt;&quot;,
+        &quot;accessKey&quot;: &quot;123456789abcdefg&quot;
+    }
+}
+</code></pre>
+<p class="text-justify">NOTES:</p>
+<ul>
+<li>If the Node device embeds the wrong register key to the URL, then the server will just send an Error 404 response.</li>
+
+</ul>
+
+<br><br>
+<h3 id="II.B.">II.B. Controlling Node Actuators and Switches</h3><p class="text-justify">To control the actuators and switches present in the Node hardware, the current approach is for the Node to constantly poll the server regarding the expected status of all of its actuators and switches. An Admin user will usually connect to the server and set the status of these actuator/switches through a dedicated UI. As an example, an Admin user will be able to set the status of &quot;Lights_1&quot; in Node1 to &quot;ON&quot; through a dedicated UI when connecting to the Server. Every X seconds, Node1 will ask the server: &quot;what should be the status of Lights_1 connected to me now?&quot;. Once the Admin user confirms the change in status of &quot;Lights_1&quot;, the Server will then be able to respond to Node1 that &quot;Lights_1&quot; should be &quot;ON&quot;. Otherwise, the Server will just respond that &quot;Lights_1&quot; should still be &quot;OFF&quot; every time Node1 polls for the latest update. When Node1 receives the response from the Server, it will then switch &quot;Lights_1&quot; to &quot;ON&quot;.</p>
+<p class="text-justify">To be able to initiate a poll request for device status, the Node device will construct a pattern based URL and will send a simple HTTP request to the server.</p>
+<p class="text-justify">The whole URL pattern will look like this:</p>
+<pre><code class='language-http' lang='http'>&lt;server_ip&gt;:&lt;server_port&gt;/&lt;householdName&gt;/node/poll/&lt;nodeName&gt;/&lt;accessKey&gt;/status
+</code></pre>
+<p class="text-justify">The server should respond in a JSON formatted data that look like this:</p>
+<pre><code class='language-json' lang='json'>{
+    &quot;node&quot;:{
+        &quot;name&quot;: null,
+        &quot;access_key&quot;: null,
+        &quot;active&quot;: true,
+        &quot;poll_rate&quot;: 2,
+        &quot;update_rate&quot;: 5,
+        &quot;socket1&quot;: false,
+        &quot;socket2&quot;: false,
+        &quot;socket3&quot;: false,
+        &quot;socket4&quot;: false,
+        &quot;stream&quot;: false,
+        &quot;device_to_stream&quot;: null,
+        &quot;streaming_port&quot;: null
+    }
+}
+</code></pre>
+<p class="text-justify">NOTES:</p>
+<ul>
+<li>These actuator parameters will be updated every time the hardware design is updated.</li>
+<li>If the Server decides to change the Node ID/access key for this specific Node, then the &quot;id&quot;/&quot;access_key&quot; parameter will not be empty.</li>
+<li>Setting the value of &quot;socketX&quot; to true will turn on the appliance plugged in to that socket in the Node device.</li>
+<li>The &quot;stream&quot; parameter will signal the Node device to open up a separate socket port defined by &quot;streaming_port&quot; and send data to this port at a much faster rate.</li>
+<li>The &quot;device_to_stream&quot; will dictate which module attached to the Node will be sending data to the Server.</li>
+<li>If the Node device embeds the wrong access key to the URL, then the server will just send an Error 404 response</li>
+
+</ul>
+
+<br><br>
+<h3 id="II.C.">II.C. Getting Sensor Parameters from Node</h3><p class="text-justify">To update the Server of the real time sensor values measured by the Node, the Node will construct an HTTP request for each sensor peripheral embedded on its hardware. The URL pattern should look like this:</p>
+<pre><code class='language-http' lang='http'>&lt;server_ip&gt;:&lt;server_port&gt;/&lt;householdName&gt;/node/update/&lt;nodeName&gt;/&lt;accessKey&gt;/&lt;paramName&gt;/&lt;paramValue&gt;
+</code></pre>
+<p class="text-justify">Once the server receives this request and verifies the identity of the Node, the Server sends a response to confirm that data was received. The Server response should like this:</p>
+<pre><code class='language-json' lang='json'>{
+    &quot;node&quot;:{
+        &quot;name&quot;: &quot;&lt;nodeName&gt;&quot;,
+        &quot;acknowledged&quot;: true
+    }
+}
+</code></pre>
+<p class="text-justify">The Server response is then read and parsed by the Node. Once it confirms that the previous request was acknowledged by the Server, the Node proceeds to send out another HTTP request for the next sensor parameter.</p>
+
+<br><br>
+<h2 id="III.">III. User Access: LAN Connected</h2><p class="text-justify">This section outlines the coverage and the different ways an Admin User can access the server app through a browser in any device connected to the local area network.</p>
+
+<br><br>
+<h3 id="III.A.">III.A. First Time Setup or Access</h3><p class="text-justify">When booting up the Server for the first time, the Admin user should access the default setup page to view the default login details. This can be accessed through a default URL:</p>
+<pre><code class='language-http' lang='http'>&lt;server_ip&gt;:&lt;server_port&gt;/liddum/setup
+</code></pre>
+<p class="text-justify">By default, the login info are as follows:</p>
+
+
+<p class="text-justify">When logged in, the Admin User has access to the Admin tab where admin related settings can be updated. It is recommended to change the household name under the Admin tab. Once change has been submitted, a prompt will flash to indicate successful household name change. The page will then be automatically redirected to an Error404 page within 2 seconds and the Admin User will be logged out of the current session. You should be able to access the new base URL using the updated household name.</p>
+<p class="text-justify">If the new household name was changed to &quot;tarvs&quot; for example, then the new base URL of the Server app will now be in:</p>
+<pre><code class='language-http' lang='http'>&lt;server_ip&gt;:&lt;server_port&gt;/tarvs
+</code></pre>
+<p class="text-justify">The Admin User will then be able to login to this page.</p>
+
+<br><br>
+<h2 id="IV.">IV. Database Models</h2><p class="text-justify">The following are sample database tables that will be utilized to properly track each Node connected to the network, as well as the Users that will try to gain control as Admin.</p>
+
+<br><br>
+<h3 id="IV.A.">IV.A. Household</h3><p class="text-justify">The name of the household is one minor security feature that can be changed to customize the base path of the URL that can be accessed. By default and during fresh run of the server with no Admin users registered yet, the base URL of the app is shown below:</p>
+<pre><code class='language-http' lang='http'>&lt;server_ip&gt;:&lt;server_port&gt;/liddum
+</code></pre>
+<p class="text-justify">After setting up at least one Admin User, the household name can be changed to alter the base path of the URL. There should be only one household name for one local area network in one household. The database model is shown below:</p>
+<figure><table class="table table-striped">
+<thead>
+<tr><th>Id</th><th>name</th><th>nodeRegisterKey</th></tr></thead>
+<tbody><tr><td>primary key</td><td>String: [4 - 20] characters, unique</td><td>String: [60] characters, hashed string</td></tr></tbody>
+</table></figure>
+
+<br><br>
+<h3 id="IV.B.">IV.B. Admin</h3><figure><table class="table table-striped">
+<thead>
+<tr><th>Id</th><th>username</th><th>email</th><th>password</th></tr></thead>
+<tbody><tr><td>primary key</td><td>String: [4 - 20] characters, unique</td><td>String: [4 - 60] characters, unique</td><td>String: [60] characters, hashed string</td></tr></tbody>
+</table></figure>
+
+<br><br>
+<h3 id="IV.C.">IV.C. Connected_Nodes</h3><figure><table class="table table-striped">
+<thead>
+<tr><th>Id</th><th>name</th><th>active</th><th>type</th><th>accessKey</th><th>updateRate</th><th>pollRate</th><th>lastAccess</th></tr></thead>
+<tbody><tr><td>primary key</td><td>String: [4-60] characters, unique</td><td>Boolean</td><td>String: [4-20] characters</td><td>String: [16] characters</td><td>Integer</td><td>Integer</td><td>Timestamp</td></tr></tbody>
+</table></figure>
+
+<br><br>
+<h3 id="IV.D.">IV.D. Standard_Node_Actuators</h3><figure><table class="table table-striped">
+<thead>
+<tr><th>Id</th><th>name</th><th>socket1</th><th>socket2</th><th>socket3</th><th>socket4</th><th>streaming</th><th>streamingPeripheral</th><th>streamingPort</th></tr></thead>
+<tbody><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody>
+</table></figure>
+
+<br><br>
+<h3 id="IV.E.">IV.E. Standard_Node_Sensors</h3><figure><table class="table table-striped">
+<thead>
+<tr><th>Id</th><th>name</th><th>temperature</th><th>humidity</th><th>c02Quantity</th><th>gasQuantity</th></tr></thead>
+<tbody><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody>
+</table></figure>
+
+
+
+
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">Powered by: Github Pages</span>
+    </div>
+</footer>        
+
+<script src="../../static/js/bootstrap.bundle.min.js"></script>
+<script src="../../static/js/prism.js"></script>
+</body>
+</html>

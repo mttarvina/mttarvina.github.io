@@ -1,0 +1,41 @@
+body {
+    min-height: 75rem;
+    padding-top: 7.5rem;
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Rubik', sans-serif;
+    /* font-family: 'Fira Code', monospace; */
+    /* font-family: 'Roboto Mono', monospace; */
+    color: #253349;
+}
+
+.centerpage {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.leftpanel {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 8rem;
+}
+
+.dropdown-menu {
+    max-height: 30rem;
+    overflow-y: auto;
+}
+
+.panel-link {
+    text-decoration: none;
+}
+
+*[id]:before 
+{ 
+  display: block; 
+  content: " "; 
+  margin-top: -75px; 
+  height: 100px; 
+  visibility: hidden; 
+}
