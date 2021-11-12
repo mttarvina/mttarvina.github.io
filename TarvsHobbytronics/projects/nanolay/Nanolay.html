@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:image" content="https://mttarvina.github.io/TarvsHobbytronics/static/img/project_cover3.PNG"/>
+    <meta property="og:description" content="A collection of personal project ideas in audio electronics, embedded systems, instrumentation, lights, power electronics, motor control, and software programming."/>
+
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/prism.css"/> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"> -->
+    <link rel="shortcut icon" type="image/jpg" href="../../static/img/logo/Favicon/favicon.ico"/>
+    <title>Project: Nanolay - Tarvs' Hobbytronics</title>
+</head>
+
+<body>
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-dark fixed-top bg-dark">
+    <div class="container-fluid mb-3">
+        <a class="navbar-brand" href="../../index.html">
+            <img class="d-inline-block align-center" src="../../static/img/logo/social_media/LinkedIn/profile.png" alt="logo" width="50" height="50">
+        </a>
+        <a class="navbar-brand" href="../../index.html">Tarvs' Hobbytronics</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../projects/home.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../tutorials/home.html">Tutorials</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../blogs/home.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../../about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT HERE -->
+<main class="container-fluid row mb-3">
+
+<!-- Table of Contents -->
+<div class="col-md-2">
+<div class="leftpanel">
+<a href="../home.html"><button type="button", class="btn btn-outline-primary">List of Projects</button></a>
+<hr/>
+<div class="tableofcontents btn-group dropend">
+<button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table of Contents</button>
+
+<!-- IMPORTANT: Table of contents will be auto generated here -->
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#I.">I. Overview</a></li>
+<li><a class="dropdown-item" href="#II.">II. Prerequisites</a></li>
+<li><a class="dropdown-item" href="#II.A.">II.A. Hardware Setup</a></li>
+<li><a class="dropdown-item" href="#II.B.">II.B. Making a project in MPLAB X IDE</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<!-- IMPORTANT: Main content will be auto generated here-->
+<div class="main-content col-md-10">
+<h1 id='project-nanolay-custom-dspic33-library'>Project Nanolay: Custom dsPIC33 Library</h1>
+<br>
+
+<figure><table class="table table-striped">
+<thead>
+<tr><th>Author</th><th>Mark Angelo Tarvina</th></tr></thead>
+<tbody><tr><td>Email</td><td><a href='mailto:mttarvina@gmail.com' target='_blank' class='url'>mttarvina@gmail.com</a></td></tr><tr><td>Date Published</td><td>&nbsp;</td></tr><tr><td>Last Updated</td><td>&nbsp;</td></tr></tbody>
+</table></figure>
+
+<br><br>
+<h2 id="I.">I. Overview</h2><br>
+<hr />
+
+<blockquote class="blockquote text-center"><p class="text-justify"><a href='https://en.wikipedia.org/wiki/List_of_Philippine_mythological_figures' target='_blank'>Nanolay - creator of all things; a culture hero and a beneficent deity; never inflicts pain or punishment on the people; responsible for the origin and development of the world. </a></p>
+
+
+</blockquote>
+<hr />
+<br>
+<figure><table class="table table-striped">
+<thead>
+<tr><th>Parameter</th><th>Value</th></tr></thead>
+<tbody><tr><td>Target Controller IC</td><td>dsPIC33CK256MP202</td></tr><tr><td>Development Board</td><td>Nanolay RevA</td></tr><tr><td>Source Code</td><td><a href="https://github.com/mttarvina/Nanolay" target="_blank">mttarvina/Nanolay: Custom dsPIC33Ck Library (github.com)</a></td></tr></tbody>
+</table></figure>
+<p class="text-justify">Project Nanolay is my custom built dsPIC33 library intended mainly for me as I try to re-learn how to program a dsPIC33 microcontroller. I find this skill a bit hard to grasp when I encountered this in college as it merges a lot of concepts in basic programming and hardware architecture of microcontrollers. Even after graduating, I know that this is one skill that I haven&#39;t fully understood but still something that I have great interest in. This  documentation features how to program individual peripherals present in a specific microcontroller device. Please be warned that to be able to follow this documentation clearly, you need to read a lot of text from the datasheet. There is not a lot of user friendly codes that are currently available for the dsPIC microcontrollers, so if you happen to look at the source code, I am, almost all of the time, accessing very specific registers and changing their values to achieve the intended results.</p>
+<p class="text-justify">Project Nanolay aims to abstract the low level aspect of programming individual registers in a dsPIC microcontroller, and create functions that are somewhat similar to the functions available in the Arduino environment. If you happen to have an experience in programming Arduino microcontrollers, then you&#39;ve probably came across a function similar to the one below:</p>
+<pre><code class='language-c++' lang='c++'>digitalWrite(pin, HIGH);
+</code></pre>
+<p class="text-justify">These kinds of functions simplify the way you can interact with devices or sensors that are connected to your microcontroller without even reading or knowing about the specific registers that should be modified to achieve the same function.</p>
+<p class="text-justify">One reason we tend to create abstraction from low level register programming and create functions that encapsulate the whole operation is mainly because of the amount of time we can save when we are working on multiple projects using the same platform or microcontroller. Another thing to add is that reading a program code that contains registers all over the place is really hard to grasp and in most cases, requires a lot of comment to explain the actual functionality.</p>
+<p class="text-justify">For those who want to learn about programming dsPIC microcontrollers, you can read through this documentation to have an idea of how it is done. However, keep in mind that depending on the specific part number you have, some of the sections here might not be applicable and some registers may or may not exist. As a general advice, always read your datasheet. I cannot also guarantee that all peripherals will be covered since this is a work in progress. If you just want to learn about a specific peripheral, check the table of contents first before you proceed so it won&#39;t be a waste of your time.</p>
+<p class="text-justify">For comments/suggestions/corrections, please don&#39;t hesitate to send me an email.</p>
+
+<br><br>
+<h2 id="II.">II. Prerequisites</h2><p class="text-justify">Before you follow through this documentation and actually do a hands-on work on your own setup, make sure you have the following already within your grasp:</p>
+<ul>
+<li>Basic knowledge of C programming language</li>
+<li>MPLAB X IDE - I am using v5.50</li>
+<li>MPLAB Code Configurator - Install this plugin within MPLAB X IDE</li>
+<li>XC16 compiler - I am using v1.70</li>
+<li>PICKit 3 or other programmer compatible to MPLAB</li>
+<li>dsPIC33 Microcontroller - I am using a dsPIC33CK256MP202 part number installed in my custom dev board: Nanolay RevA</li>
+<li>Access to device datasheet</li>
+<li>Breadboard and wire jumpers</li>
+<li>3.3V DC supply - You can use a linear 3.3V regulator sourced from a 5V - 12V DC power source</li>
+<li>Oscilloscope - This is very important as we really need this to verify timing related functions later on</li>
+<li>Multimeter - in case there&#39;s something wrong with your hardware setup, a good tool to have in general</li>
+
+</ul>
+<br><br>
+<h3 id="II.A.">II.A. Hardware Setup</h3><p class="text-justify">You can initially prepare your setup in a breadboard especially if you have a breadboard compatible package for your microcontroller IC. In most cases however, it is better to have your own custom designed development board to eliminate jumper wires in your basic setup. In my case, I am using my custom designed dev board intended for the microcontroller IC that I am using. The details are shown below:</p>
+<ul>
+<li><p class="text-justify"><a href="./pdf/Nanolay_RevA.pdf" target="_blank">Schematic: Nanolay RevA</a></p>
+</li>
+<li><p class="text-justify"><a href="./pdf/Nanolay_RevA_PCB.pdf" target="_blank">PCB Design: Nanolay RevA</a></p>
+
+</li>
+
+</ul>
+<br><br>
+<h3 id="II.B.">II.B. Making a project in MPLAB X IDE</h3><p class="text-justify">Please skip this section if you already know how to create projects in MPLAB X IDE, otherwise follow along.</p>
+<ol>
+<li><p class="text-justify">When you open up MPLAB X IDE, in File &gt; New Project, Choose &quot;Microchip Embedded&quot; and &quot;Standalone Projects&quot;. Click Next.</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="img/prereq/createnew1.PNG"  /></p>
+</li>
+
+</ol>
+<ol start='2' >
+<li><p class="text-justify">Search for the specific part number of your device. If you have your PICKit3 connected, MPLAB should be able to detect it in the Tool dropdown menu. Click Next.</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="img/prereq/createnew2.PNG"  /></p>
+</li>
+
+</ol>
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">Powered by: Github Pages</span>
+    </div>
+</footer>        
+
+<script src="../../static/js/bootstrap.bundle.min.js"></script>
+<script src="../../static/js/prism.js"></script>
+</body>
+</html>
