@@ -1,0 +1,6 @@
+*.py
+*.ui
+*.db
+/content-src
+/__pycache__
+/templates
