@@ -83,7 +83,7 @@
 </div>
 
 <!-- IMPORTANT: Main content will be auto generated here-->
-<div class="main-content col-md-10">
+<div class="main-content col-md-8">
 <h1 id='determining-commutation-table-of-sensored-bldc-motors'>Determining Commutation Table of Sensored BLDC Motors</h1>
 <br>
 
@@ -93,9 +93,7 @@
 <tbody><tr><td style='text-align:left;' >Email</td><td style='text-align:left;' ><a href='mailto:mttarvina@gmail.com' target='_blank' class='url'>mttarvina@gmail.com</a></td></tr><tr><td style='text-align:left;' >Category</td><td style='text-align:left;' >Motor Control</td></tr><tr><td style='text-align:left;' >Article Number</td><td style='text-align:left;' >1</td></tr><tr><td style='text-align:left;' >Date Published</td><td style='text-align:left;' >22.Oct.2023</td></tr><tr><td style='text-align:left;' >Date Updated</td><td style='text-align:left;' >22.Oct.2023</td></tr></tbody>
 </table></figure>
 <hr />
-<br><br>
 <h2 id="I.">I. Overview</h2><p class="text-justify">This tutorial describes a method on how to derive the commutation table of a Y-connected, sensored BLDC motor without access to the motor datasheet. In this method, we are going to look at the back-EMF of each motor phase and see how it corresponds to each hall sensor output. The idea here is that the back-EMF represents the voltage that should be applied by the motor driver/inverter to each phase of the motor during the commutation process. This is useful when controlling BLDC motors in sensored mode especially in motor control algorithms that fully utilize the hall sensor outputs (e.g. Six Step Commutation). Note that this method works regardless of the number of poles of the motor. Note also that in this method, you can arbitrarily assign the phase number/letter to each of the motor phase and hall sensor output. Once you labelled the motor phases and hall sensor outputs, you should stick to that configuration since that&#39;s where our generated commutation table will be applicable. </p>
-<br><br>
 <h2 id="II.">II. Prerequisites</h2><p class="text-justify">This method requires the following tools/equipment/components:</p>
 <ul>
 <li>Oscilloscope (4-channel is preferred)</li>
@@ -108,11 +106,8 @@
 <li>Any BLDC motor with hall sensor </li>
 
 </ul>
-<br><br>
-<h2 id="III.">III. Methodology</h2><br><br>
-<h3 id="III.A.">III.A. Setup</h3><p class="text-justify">The diagram below shows the schematic of the test setup. An external 5V source is required to power the hall sensors of the motor. A 4.7kOhm resistor is used as a pullup for each hall sensor. Each phase of the motor is then loaded with a 100kOhm resistor, with the common node (equivalent to the internal neutral node of motor) connected to the oscilloscope and external supply&#39;s ground. A 4-channel oscilloscope will capture the waveforms of each hall sensor outputs (CH1-CH3) as well as the phase to neutral voltage of the motor (CH4). </p>
+<h2 id="III.">III. Methodology</h2><h3 id="III.A.">III.A. Setup</h3><p class="text-justify">The diagram below shows the schematic of the test setup. An external 5V source is required to power the hall sensors of the motor. A 4.7kOhm resistor is used as a pullup for each hall sensor. Each phase of the motor is then loaded with a 100kOhm resistor, with the common node (equivalent to the internal neutral node of motor) connected to the oscilloscope and external supply&#39;s ground. A 4-channel oscilloscope will capture the waveforms of each hall sensor outputs (CH1-CH3) as well as the phase to neutral voltage of the motor (CH4). </p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/setup.png" alt="setup"  /></p>
-<br><br>
 <h3 id="III.B.">III.B. Procedure</h3><ol start='' >
 <li><p class="text-justify">Connect your oscilloscope probes as shown in Section III.A. Make sure that you already labelled each motor phase and each hall sensor outputs arbitrarily. Usually the wire color of each motor phase corresponds to the same wire color on each hall sensor output. So if one phase of the motor is colored yellow, then there usually is a corresponding hall sensor wire of the same color. an example motor is shown below:</p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/motor_wire_labels.png" referrerpolicy="no-referrer" alt="MotorWireLabels"></p>
@@ -131,20 +126,14 @@
 </li>
 
 </ol>
-<br><br>
-<h2 id="IV.">IV. Waveforms</h2><br><br>
-<h3 id="IV.A.">IV.A. Phase A to Neutral (GND)</h3><p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/NewFile1.png" referrerpolicy="no-referrer" alt="NewFile1"></p>
+<h2 id="IV.">IV. Waveforms</h2><h3 id="IV.A.">IV.A. Phase A to Neutral (GND)</h3><p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/NewFile1.png" referrerpolicy="no-referrer" alt="NewFile1"></p>
 <p class="text-justify"><em>CH1: Hall A; CH2: Hall B; CH3: Hall C; CH4: Phase A - Neutral</em></p>
-<br><br>
 <h3 id="IV.B.">IV.B. Phase B to Neutral (GND)</h3><p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/NewFile2.png" referrerpolicy="no-referrer" alt="NewFile2"></p>
 <p class="text-justify"><em>CH1: Hall A; CH2: Hall B; CH3: Hall C; CH4: Phase B - Neutral</em></p>
-<br><br>
 <h3 id="IV.C.">IV.C. Phase C to Neutral (GND)</h3><p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/NewFile3.png" referrerpolicy="no-referrer" alt="NewFile3"></p>
 <p class="text-justify"><em>CH1: Hall A; CH2: Hall B; CH3: Hall C; CH4: Phase C - Neutral</em></p>
-<br><br>
 <h3 id="IV.D.">IV.D. Each Phase Waveform aligned to the same Hall Sensor Pattern</h3><p class="text-justify">Once the three waveforms have been captured, we can dissect it into 6 sections corresponding to each unique hall sensor state combination. We then look at the polarity of the back-emf for each phase. We assigned logic 1 when the hall sensor waveform is HIGH and logic 0 when the hall sensor waveform is LOW. Lastly, we label each waveform as follows:</p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/commutation_sequence.png" alt="commutation_sequence"  /></p>
-<br><br>
 <h2 id="V.">V. Derived Commutation Table</h2><p class="text-justify">Looking at the waveforms from the previous section, we now arrive at the commutation table shown below. Notice that in each commutation sector, one phase will always be positive (+), one phase will be negative (-), and one phase will be zero (0), and no two phases will have the same state.</p>
 
 <figure class='table-figure'><table class="table table-striped">
@@ -178,6 +167,8 @@
 </table></figure>
 
 </div>
+
+<div class="col-md-2"></div>
 
 </main>
 
