@@ -74,7 +74,13 @@
 <li><a class="dropdown-item" href="#III.C.">+ III.C. Step 3: Connect your device</a></li>
 <li><a class="dropdown-item" href="#III.D.">+ III.D. Step 4: Configure WiFi credentials through serial</a></li>
 <li><a class="dropdown-item" href="#III.E.">+ III.E. Step 5: Access the control panel</a></li>
-<li><a class="dropdown-item" href="#IV.">IV. Normal Operations</a></li>
+<li><a class="dropdown-item" href="#IV.">IV. Normal Operation</a></li>
+<li><a class="dropdown-item" href="#V.">V. Changing WiFi Network</a></li>
+<li><a class="dropdown-item" href="#V.A.">+ V.A. Step 1: Access the online serial monitor app</a></li>
+<li><a class="dropdown-item" href="#V.B.">+ V.B. Step 2: Setup the connection settings</a></li>
+<li><a class="dropdown-item" href="#V.C.">+ V.C. Step 3: Connect your device</a></li>
+<li><a class="dropdown-item" href="#V.D.">+ V.D. Step 4: Configure WiFi credentials through serial</a></li>
+<li><a class="dropdown-item" href="#V.E.">+ V.E. Step 5: Access the control panel</a></li>
 </ul>
 
 </div>
@@ -89,7 +95,7 @@
 <figure class='table-figure'><table class="table table-striped">
 <thead>
 <tr><th style='text-align:left;' >Author</th><th style='text-align:left;' >Mark Angelo Tarvina</th></tr></thead>
-<tbody><tr><td style='text-align:left;' >Email</td><td style='text-align:left;' ><a href='mailto:mttarvina@gmail.com' target='_blank' class='url'>mttarvina@gmail.com</a></td></tr><tr><td style='text-align:left;' >Category</td><td style='text-align:left;' >Projects</td></tr><tr><td style='text-align:left;' >Article Number</td><td style='text-align:left;' >1</td></tr><tr><td style='text-align:left;' >Date Published</td><td style='text-align:left;' >01.Jan.2024</td></tr><tr><td style='text-align:left;' >Date Updated</td><td style='text-align:left;' >01.Jan.2024</td></tr></tbody>
+<tbody><tr><td style='text-align:left;' >Email</td><td style='text-align:left;' ><a href='mailto:mttarvina@gmail.com' target='_blank' class='url'>mttarvina@gmail.com</a></td></tr><tr><td style='text-align:left;' >Category</td><td style='text-align:left;' >Projects</td></tr><tr><td style='text-align:left;' >Article Number</td><td style='text-align:left;' >1</td></tr><tr><td style='text-align:left;' >Date Published</td><td style='text-align:left;' >01.Jan.2024</td></tr><tr><td style='text-align:left;' >Date Updated</td><td style='text-align:left;' >03.Jan.2024</td></tr></tbody>
 </table></figure>
 <hr />
 <h2 id="I.">I. Overview</h2><p class="text-justify">This tutorials provides the necessary information to configure the Eperly Lite device to connect to your WiFi network for you to be able to access the control panel and operate the lamp.</p>
@@ -118,7 +124,7 @@
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/firmware_version.jpg" style="zoom:50%;" /></p>
 <p class="text-justify">For first time setup, the device will indicate that no WiFi credentials have been saved as shown below:</p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/no_wifi_info.jpg" style="zoom:50%;" /></p>
-<h3 id="III.A.">III.A. Step 1: Access the online serial monitor app</h3><p class="text-justify">First, make sure that your device is unplugged from your PC/laptop.</p>
+<h3 id="III.A.">III.A. Step 1: Access the online serial monitor app</h3><p class="text-justify"><strong>First, make sure that your device is unplugged from your PC/laptop.</strong></p>
 <p class="text-justify">On your laptop/PC, open your Google Chrome browser and access the site below (note that this web app seems to be only compatible with Google Chrome at the moment):</p>
 <p class="text-justify"><strong><a href='https://serial.huhn.me/#' target='_blank' class='url'>https://serial.huhn.me/#</a></strong></p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/online_serial_monitor.png" referrerpolicy="no-referrer"></p>
@@ -126,7 +132,7 @@
 <h3 id="III.B.">III.B. Step 2: Setup the connection settings</h3><p class="text-justify">Click the SETTINGS icon and configure it similar to the image shown below, and click SAVE:</p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/serial_settings.png" referrerpolicy="no-referrer"></p>
 
-<h3 id="III.C.">III.C. Step 3: Connect your device</h3><p class="text-justify">Plug your device to your PC/laptop and immediately click the CONNECT button and a window will pop-up for you to select a COM port. If no other similar device is connected in your PC/laptop, then it will only show one connected device. Choose that COM port and click CONNECT:</p>
+<h3 id="III.C.">III.C. Step 3: Connect your device</h3><p class="text-justify">Plug your device to your PC/laptop and <strong>immediately click the CONNECT button</strong> and a window will pop-up for you to select a COM port. If no other similar device is connected in your PC/laptop, then it will only show one connected device. Choose that COM port and click CONNECT:</p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/setup_step3.png" referrerpolicy="no-referrer"></p>
 <h3 id="III.D.">III.D. Step 4: Configure WiFi credentials through serial</h3><p class="text-justify">The web app will then redirect you to a serial terminal view similar to one shown below:</p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/setup_step4a.png" referrerpolicy="no-referrer"></p>
@@ -140,10 +146,27 @@
 <p class="text-justify">Once the device connects successfully, it will publish it&#39;s IP address both in the serial terminal and in the LCD screen of the device.</p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/setup_step4e.png" referrerpolicy="no-referrer"></p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/wifi_connected.jpg" style="zoom:50%;" /></p>
-<h3 id="III.E.">III.E. Step 5: Access the control panel</h3><p class="text-justify">Using any WiFi capable device (PC/laptop/Smartphone), open your web browser app and type the IP address indicated by the device to access the control panel. From here, you can now control you the lamp.</p>
+<h3 id="III.E.">III.E. Step 5: Access the control panel</h3><p class="text-justify">Using any WiFi capable device (PC/laptop/Smartphone), make sure that this device is connected to the same WiFi network that the lamp is connected to. Open your web browser app and type the IP address indicated by the device to access the control panel. From here, you can now control the lamp remotely.</p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/setup_step4f.png" referrerpolicy="no-referrer"></p>
 
-<h2 id="IV.">IV. Normal Operations</h2><p class="text-justify">During normal operations, you can just plug in the device to any USB adapter and it will automatically connect to your WiFi network. There is no need to access the device through a serial terminal. Wait for it to connect to WiFi network and it will display it&#39;s IP address. Follow instructions on part <strong>III.E. Step 5</strong> to access the control panel.</p>
+<h2 id="IV.">IV. Normal Operation</h2><p class="text-justify">During normal operation, you can just plug in the device to any USB adapter and it will automatically connect to your WiFi network. There is no need to access the device through a serial terminal. Wait for it to connect to the WiFi network and it will display it&#39;s IP address. Follow instructions on part <strong>III.E. Step 5</strong> to access the control panel of the lamp.</p>
+<h2 id="V.">V. Changing WiFi Network</h2><p class="text-justify">If you want your lamp to connect to other WiFi Network then follow the steps below (most steps are similar to the steps indicated in <strong>Part III</strong>):</p>
+<h3 id="V.A.">V.A. Step 1: Access the online serial monitor app</h3><p class="text-justify"><strong>First, make sure that your device is unplugged from your PC/laptop.</strong></p>
+<p class="text-justify">On your laptop/PC, open your Google Chrome browser and access the site below:</p>
+<p class="text-justify"><strong><a href='https://serial.huhn.me/#' target='_blank' class='url'>https://serial.huhn.me/#</a></strong></p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/online_serial_monitor.png" referrerpolicy="no-referrer"></p>
+
+<h3 id="V.B.">V.B. Step 2: Setup the connection settings</h3><p class="text-justify">Click the SETTINGS icon and configure it similar to the image shown below, and click SAVE:</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/serial_settings.png" referrerpolicy="no-referrer"></p>
+
+<h3 id="V.C.">V.C. Step 3: Connect your device</h3><p class="text-justify">Plug your device to your PC/laptop and <strong>immediately click the CONNECT button</strong> and a window will pop-up for you to select a COM port. If no other similar device is connected in your PC/laptop, then it will only show one connected device. Choose that COM port and click CONNECT:</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/setup_step3.png" referrerpolicy="no-referrer"></p>
+<h3 id="V.D.">V.D. Step 4: Configure WiFi credentials through serial</h3><p class="text-justify">This step is similar to <strong>Part III.D. Step 4</strong> but the only thing different this time is that there is already a WiFi credential saved into the device. In the serial terminal, right before it connects to the previously configure WiFi network, it displays a prompt if the user wants to change the WiFi info saved into the device.</p>
+<p class="text-justify"><strong>NOTE: The device will only wait for up to 8 seconds to ask for user input. If there is no user input within this time, then it proceeds to connect to the previously configured WiFi info.</strong></p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/setup_step5d.png" referrerpolicy="no-referrer"></p>
+<p class="text-justify">Follow the instructions indicated by the device prompts similar to <strong>Part III.D. Step 4</strong> to change your WiFi connection. Wait for the device to successfully connect to the new WiFi network and publish it&#39;s IP Address.</p>
+<h3 id="V.E.">V.E. Step 5: Access the control panel</h3><p class="text-justify">Using any WiFi capable device (PC/laptop/Smartphone), make sure that this device is connected to the new WiFi network that the lamp is connected to. Open your web browser app and type the IP address indicated by the device to access the control panel. From here, you can now control the lamp remotely.</p>
+
 
 </div>
 

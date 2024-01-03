@@ -77,6 +77,7 @@
 <li><a class="dropdown-item" href="#IV.C.">+ IV.C. Phase C to Neutral (GND)</a></li>
 <li><a class="dropdown-item" href="#IV.D.">+ IV.D. Each Phase Waveform aligned to the same Hall Sensor Pattern</a></li>
 <li><a class="dropdown-item" href="#V.">V. Derived Commutation Table</a></li>
+<li><a class="dropdown-item" href="#VI.">VI. Reverse Commutation</a></li>
 </ul>
 
 </div>
@@ -91,7 +92,7 @@
 <figure class='table-figure'><table class="table table-striped">
 <thead>
 <tr><th style='text-align:left;' >Author</th><th style='text-align:left;' >Mark Angelo Tarvina</th></tr></thead>
-<tbody><tr><td style='text-align:left;' >Email</td><td style='text-align:left;' ><a href='mailto:mttarvina@gmail.com' target='_blank' class='url'>mttarvina@gmail.com</a></td></tr><tr><td style='text-align:left;' >Category</td><td style='text-align:left;' >Motor Control</td></tr><tr><td style='text-align:left;' >Article Number</td><td style='text-align:left;' >1</td></tr><tr><td style='text-align:left;' >Date Published</td><td style='text-align:left;' >22.Oct.2023</td></tr><tr><td style='text-align:left;' >Date Updated</td><td style='text-align:left;' >22.Oct.2023</td></tr></tbody>
+<tbody><tr><td style='text-align:left;' >Email</td><td style='text-align:left;' ><a href='mailto:mttarvina@gmail.com' target='_blank' class='url'>mttarvina@gmail.com</a></td></tr><tr><td style='text-align:left;' >Category</td><td style='text-align:left;' >Motor Control</td></tr><tr><td style='text-align:left;' >Article Number</td><td style='text-align:left;' >1</td></tr><tr><td style='text-align:left;' >Date Published</td><td style='text-align:left;' >22.Oct.2023</td></tr><tr><td style='text-align:left;' >Date Updated</td><td style='text-align:left;' >03.Jan.2024</td></tr></tbody>
 </table></figure>
 <hr />
 <h2 id="I.">I. Overview</h2><p class="text-justify">This tutorial describes a method on how to derive the commutation table of a Y-connected, sensored BLDC motor without access to the motor datasheet. In this method, we are going to look at the back-EMF of each motor phase and see how it corresponds to each hall sensor output. The idea here is that the back-EMF represents the voltage that should be applied by the motor driver/inverter to each phase of the motor during the commutation process. This is useful when controlling BLDC motors in sensored mode especially in motor control algorithms that fully utilize the hall sensor outputs (e.g. Six Step Commutation). Note that this method works regardless of the number of poles of the motor. Note also that in this method, you can arbitrarily assign the phase number/letter to each of the motor phase and hall sensor output. Once you labelled the motor phases and hall sensor outputs, you should stick to that configuration since that&#39;s where our generated commutation table will be applicable. </p>
@@ -119,7 +120,7 @@
 </li>
 <li><p class="text-justify">Adjust your scope view to capture at least one cycle of each hall sensor output. Take note of this pattern and make sure to capture this same pattern as we move along each phase of the motor.</p>
 </li>
-<li><p class="text-justify">Spin the rotor shaft while probing Phase A of the motor. Capture the waveform and make sure that each hall sensor output displays at least one cycle.</p>
+<li><p class="text-justify">Spin the rotor shaft while probing Phase A of the motor. <strong>Make sure to spin it only in one direction.</strong> You can arbitrarily assign this spin direction as either clockwise or counter-clockwise depending on your preferred orientation. Capture the waveform and make sure that each hall sensor output displays at least one cycle.</p>
 </li>
 <li><p class="text-justify">Repeat step #4 for Phases B and C.</p>
 </li>
@@ -135,7 +136,7 @@
 <p class="text-justify"><em>CH1: Hall A; CH2: Hall B; CH3: Hall C; CH4: Phase C - Neutral</em></p>
 <h3 id="IV.D.">IV.D. Each Phase Waveform aligned to the same Hall Sensor Pattern</h3><p class="text-justify">Once the three waveforms have been captured, we can dissect it into 6 sections corresponding to each unique hall sensor state combination. We then look at the polarity of the back-emf for each phase. We assigned logic 1 when the hall sensor waveform is HIGH and logic 0 when the hall sensor waveform is LOW. Lastly, we label each waveform as follows:</p>
 <p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/commutation_sequence.png" alt="commutation_sequence"  /></p>
-<h2 id="V.">V. Derived Commutation Table</h2><p class="text-justify">Looking at the waveforms from the previous section, we now arrive at the commutation table shown below. Notice that in each commutation sector, one phase will always be positive (+), one phase will be negative (-), and one phase will be zero (0), and no two phases will have the same state.</p>
+<h2 id="V.">V. Derived Commutation Table</h2><p class="text-justify">Looking at the waveforms from the previous section, we now arrive at the commutation table shown below. Note that this commutation table will rotate the motor to a specific direction that you indicated in part <strong>III.B.4.</strong> This will be your forward commutation. Notice that in each commutation sector, one phase will always be positive (+), one phase will be negative (-), and one phase will be zero (0), and no two phases will have the same state.</p>
 
 <figure class='table-figure'><table class="table table-striped">
 <thead>
@@ -165,6 +166,19 @@
 <thead>
 <tr><th>Sector</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
 <tbody><tr><td>Electrical Degrees</td><td>60</td><td>120</td><td>180</td><td>240</td><td>300</td><td>360</td></tr><tr><td>HALLA</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>HALLB</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr><tr><td>HALLC</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>VA</td><td>-</td><td>-</td><td>0</td><td>+</td><td>+</td><td>0</td></tr><tr><td>VB</td><td>+</td><td>0</td><td>-</td><td>-</td><td>0</td><td>+</td></tr><tr><td>VC</td><td>0</td><td>+</td><td>+</td><td>0</td><td>-</td><td>-</td></tr><tr><td>DRIVE A</td><td>LOW</td><td>LOW</td><td>HIZ</td><td>PWM</td><td>PWM</td><td>HIZ</td></tr><tr><td>DRIVE B</td><td>PWM</td><td>HIZ</td><td>LOW</td><td>LOW</td><td>HIZ</td><td>PWM</td></tr><tr><td>DRIVE C</td><td>HIZ</td><td>PWM</td><td>PWM</td><td>HIZ</td><td>LOW</td><td>LOW</td></tr><tr><td>HALL State (Hall A = MSB)</td><td>5</td><td>4</td><td>6</td><td>2</td><td>3</td><td>1</td></tr></tbody>
+</table></figure>
+<h2 id="VI.">VI. Reverse Commutation</h2><p class="text-justify">The derived commutation table that we created will only rotate the motor in one specific spin direction (forward commutation). If you want to derive the reverse commutation of the same motor, there is no need to repeat the earlier steps. Using the derived commutation table in Part V, just swap out the inverter drive states as follows:</p>
+<ul>
+<li>From LOW to PWM</li>
+<li>From PWM to LOW</li>
+<li>Retain HIZ state</li>
+
+</ul>
+<p class="text-justify">The resulting reverse commutation will now be:</p>
+<figure class='table-figure'><table class="table table-striped">
+<thead>
+<tr><th>Sector</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+<tbody><tr><td>Electrical Degrees</td><td>60</td><td>120</td><td>180</td><td>240</td><td>300</td><td>360</td></tr><tr><td>HALLA</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>HALLB</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr><tr><td>HALLC</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>VA</td><td>-</td><td>-</td><td>0</td><td>+</td><td>+</td><td>0</td></tr><tr><td>VB</td><td>+</td><td>0</td><td>-</td><td>-</td><td>0</td><td>+</td></tr><tr><td>VC</td><td>0</td><td>+</td><td>+</td><td>0</td><td>-</td><td>-</td></tr><tr><td>DRIVE A</td><td>PWM</td><td>PWM</td><td>HIZ</td><td>LOW</td><td>LOW</td><td>HIZ</td></tr><tr><td>DRIVE B</td><td>LOW</td><td>HIZ</td><td>PWM</td><td>PWM</td><td>HIZ</td><td>LOW</td></tr><tr><td>DRIVE C</td><td>HIZ</td><td>LOW</td><td>LOW</td><td>HIZ</td><td>PWM</td><td>PWM</td></tr><tr><td>HALL State (Hall A = MSB)</td><td>5</td><td>4</td><td>6</td><td>2</td><td>3</td><td>1</td></tr></tbody>
 </table></figure>
 
 </div>
