@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Project Manuals"/>
+    <meta property="og:image" content="https://tarvshobbytronics.cc/static/img/project_cover5.png"/>
+    <meta property="og:description" content="A collection of personal project ideas in audio electronics, embedded systems, instrumentation, lights, power electronics, motor control, and software programming."/>
+
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/prism.css"/> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="../static/img/logo/Favicon/favicon.ico"/>
+    <title>Project Manuals</title>
+</head>
+
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-xl">
+            <a class="navbar-brand" href="../index.html"><img class="d-inline-block align-center" src="../static/img/logo/social_media/Youtube/profile.png" alt="logo" width="50" height="50"></a>
+            <a class="navbar-brand" href="../index.html">Tarvs' Hobbytronics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item active"><a class="nav-link" aria-current="page" href="../index.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="../Blogs/home.html">Blogs</a></li>
+					<li class="nav-item"><a class="nav-link" href="../Project-Manuals/home.html">Project Manuals</a></li>
+					<li class="nav-item"><a class="nav-link" href="../Projects/home.html">Projects</a></li>
+					<li class="nav-item"><a class="nav-link" href="../Tutorials/home.html">Tutorials</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- MAIN CONTENT HERE -->
+    <main class="container-xl">
+        <div class="main-content">
+<h1 id='eperly-lite---basic-operations-manual'>Eperly Lite - Basic Operations Manual</h1>
+<br>
+
+<figure class='table-figure'><table class="table table-striped">
+<thead>
+<tr><th style='text-align:left;' >Author</th><th style='text-align:left;' >Mark Angelo Tarvina</th></tr></thead>
+<tbody><tr><td style='text-align:left;' >Email</td><td style='text-align:left;' ><a href='mailto:mttarvina@gmail.com' target='_blank' class='url'>mttarvina@gmail.com</a></td></tr><tr><td style='text-align:left;' >Category</td><td style='text-align:left;' >Projects Manuals</td></tr><tr><td style='text-align:left;' >Article Number</td><td style='text-align:left;' >1</td></tr><tr><td style='text-align:left;' >Date Published</td><td style='text-align:left;' >01.Jan.2024</td></tr><tr><td style='text-align:left;' >Date Updated</td><td style='text-align:left;' >08.Jan.2024</td></tr></tbody>
+</table></figure>
+<hr />
+<h2 id='i-overview'>I. Overview</h2>
+<p class="text-justify">This tutorials provides the necessary information to configure the Eperly Lite device to connect to your WiFi network for you to be able to access the control panel and operate the lamp.</p>
+<p class="text-justify"><strong>Eperly Lite</strong> is a WiFi controlled, USB powered, RGBW night lamp with different 3D crystal ball patterns to choose from. It has a predetermined color palette for the LED color setting but can also be fine tuned by adjusting the individual color components: red, green, and blue. It has three different light patterns: static, rotate, and heartbeat. It can be configured through USB and an online serial monitor; no need to install any apps on your WiFi capable device.</p>
+<h2 id='ii-configuration-setup'>II. Configuration Setup</h2>
+<p class="text-justify">Configuring Eperly Lite only requires three components:</p>
+<ul>
+<li><p class="text-justify">Eperly Lite lamp</p>
+</li>
+<li><p class="text-justify">USB-A to USB-Micro Cable (make sure that this is a data cable, not a charging cable)</p>
+</li>
+<li><p class="text-justify">Laptop or PC device connected to the internet, and with Google Chrome installed</p>
+
+</li>
+
+</ul>
+<p class="text-justify">Refer to the diagram below for the initial configuration:</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup.png" referrerpolicy="no-referrer"></p>
+
+<h2 id='iii-configuration-steps-first-time-setup'>III. Configuration Steps (First Time Setup)</h2>
+<p class="text-justify">These configuration steps outline the procedure on how to save your WiFi credentials into the device for it to be able to connect to your WiFi network. These steps are applicable to the following firmware versions of the device:</p>
+<ul>
+<li>v1.0</li>
+<li>v1.1</li>
+
+</ul>
+<p class="text-justify">The firmware version is displayed after the logo once you power up the device (plug the USB from any compatible adapter)</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-firmware_version.jpg" style="zoom:50%;" /></p>
+<p class="text-justify">For first time setup, the device will indicate that no WiFi credentials have been saved as shown below:</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-no_wifi_info.jpg" style="zoom:50%;" /></p>
+<h3 id='iiia-step-1-access-the-online-serial-monitor-app'>III.A. Step 1: Access the online serial monitor app</h3>
+<p class="text-justify"><strong>First, make sure that your device is unplugged from your PC/laptop.</strong></p>
+<p class="text-justify">On your laptop/PC, open your Google Chrome browser and access the site below (note that this web app seems to be only compatible with Google Chrome at the moment):</p>
+<p class="text-justify"><strong><a href='https://serial.huhn.me/#' target='_blank' class='url'>https://serial.huhn.me/#</a></strong></p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-online_serial_monitor.png" referrerpolicy="no-referrer"></p>
+
+<h3 id='iiib-step-2-setup-the-connection-settings'>III.B. Step 2: Setup the connection settings</h3>
+<p class="text-justify">Click the SETTINGS icon and configure it similar to the image shown below, and click SAVE:</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-serial_settings.png" referrerpolicy="no-referrer"></p>
+
+<h3 id='iiic-step-3-connect-your-device'>III.C. Step 3: Connect your device</h3>
+<p class="text-justify">Plug your device to your PC/laptop and <strong>immediately click the CONNECT button</strong> and a window will pop-up for you to select a COM port. If no other similar device is connected in your PC/laptop, then it will only show one connected device. Choose that COM port and click CONNECT:</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup_step3.png" referrerpolicy="no-referrer"></p>
+<h3 id='iiid-step-4-configure-wifi-credentials-through-serial'>III.D. Step 4: Configure WiFi credentials through serial</h3>
+<p class="text-justify">The web app will then redirect you to a serial terminal view similar to one shown below:</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup_step4a.png" referrerpolicy="no-referrer"></p>
+
+<p class="text-justify">Notice that the last prompt requires you to enter the WiFi SSID. You can type it in the input text field, click SEND, then it will display a confirmation prompt for you to verify that your input is correct. Type &quot;Y&quot; or &quot;y&quot; in the input text field if the WiFi network is correct. Type &quot;N&quot; or &quot;n&quot; if you want to re-type.</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup_step4b.png" referrerpolicy="no-referrer"></p>
+<p class="text-justify">Next is for you to input your WiFi password. Similar to previous step, type your password in the input text field, click SEND, then it will display a confirmation prompt for you to verify that your input is correct. Type &quot;Y&quot; or &quot;y&quot; in the input text field if the WiFi password is correct. Type &quot;N&quot; or &quot;n&quot; if you want to re-type.</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup_step4c.png" referrerpolicy="no-referrer"></p>
+<p class="text-justify">After setting up the WiFi credentials, the device will try to connect to your WiFi network.</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup_step4d.png" referrerpolicy="no-referrer"></p>
+<p class="text-justify">Once the device connects successfully, it will publish it&#39;s IP address both in the serial terminal and in the LCD screen of the device.</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup_step4e.png" referrerpolicy="no-referrer"></p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-wifi_connected.jpg" style="zoom:50%;" /></p>
+<h3 id='iiie-step-5-access-the-control-panel'>III.E. Step 5: Access the control panel</h3>
+<p class="text-justify">Using any WiFi capable device (PC/laptop/Smartphone), make sure that this device is connected to the same WiFi network that the lamp is connected to. Open your web browser app and type the IP address indicated by the device to access the control panel. From here, you can now control the lamp remotely.</p>
+<p class="text-justify">For example, here&#39;s how it looks for a device with firmware version: <strong>v1.0</strong>, and an IP address of 192.168.1.11</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup_step4f.png" style="zoom: 80%;" /></p>
+
+<p class="text-justify">And here&#39;s how it looks for a device with firmware version: <strong>v1.1</strong>, and an IP address of 192.168.1.100</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-v1p1_ui_off.jpg" style="zoom: 50%;" /></p>
+
+<h2 id='iv-normal-operation'>IV. Normal Operation</h2>
+<p class="text-justify">During normal operation, you can just plug in the device to any USB adapter and it will automatically connect to your WiFi network. There is no need to access the device through a serial terminal. Wait for it to connect to the WiFi network and it will display it&#39;s IP address. Follow instructions on part <strong>III.E. Step 5</strong> to access the control panel of the lamp.</p>
+<h2 id='v-changing-wifi-network'>V. Changing WiFi Network</h2>
+<p class="text-justify">If you want your lamp to connect to other WiFi network then follow the steps below (most steps are similar to the steps indicated in <strong>Part III</strong>):</p>
+<h3 id='va-step-1-access-the-online-serial-monitor-app'>V.A. Step 1: Access the online serial monitor app</h3>
+<p class="text-justify"><strong>First, make sure that your device is unplugged from your PC/laptop.</strong></p>
+<p class="text-justify">On your laptop/PC, open your Google Chrome browser and access the site below:</p>
+<p class="text-justify"><strong><a href='https://serial.huhn.me/#' target='_blank' class='url'>https://serial.huhn.me/#</a></strong></p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-online_serial_monitor.png" referrerpolicy="no-referrer"></p>
+
+<h3 id='vb-step-2-setup-the-connection-settings'>V.B. Step 2: Setup the connection settings</h3>
+<p class="text-justify">Click the SETTINGS icon and configure it similar to the image shown below, and click SAVE:</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-serial_settings.png" referrerpolicy="no-referrer"></p>
+
+<h3 id='vc-step-3-connect-your-device'>V.C. Step 3: Connect your device</h3>
+<p class="text-justify">Plug your device to your PC/laptop and <strong>immediately click the CONNECT button</strong> and a window will pop-up for you to select a COM port. If no other similar device is connected in your PC/laptop, then it will only show one connected device. Choose that COM port and click CONNECT:</p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup_step3.png" referrerpolicy="no-referrer"></p>
+<h3 id='vd-step-4-configure-wifi-credentials-through-serial'>V.D. Step 4: Configure WiFi credentials through serial</h3>
+<p class="text-justify">This step is similar to <strong>Part III.D. Step 4</strong> but the only thing different this time is that there is already a WiFi credential saved into the device. In the serial terminal, right before it connects to the previously configure WiFi network, it displays a prompt if the user wants to change the WiFi info saved into the device.</p>
+<p class="text-justify"><strong>NOTE: The device will only wait for up to 8 seconds to ask for user input. If there is no user input within this time, then it proceeds to connect to the previously configured WiFi info.</strong></p>
+<p class="text-justify"><img class="mx-auto d-block img-fluid" src="./img/1-setup_step5d.png" referrerpolicy="no-referrer"></p>
+<p class="text-justify">Follow the instructions indicated by the device prompt which is similar to <strong>Part III.D. Step 4</strong> to change your WiFi connection. Wait for the device to successfully connect to the new WiFi network and publish it&#39;s IP Address.</p>
+<h3 id='ve-step-5-access-the-control-panel'>V.E. Step 5: Access the control panel</h3>
+<p class="text-justify">Using any WiFi capable device (PC/laptop/Smartphone), make sure that this device is connected to the new WiFi network that the lamp is connected to. Open your web browser app and type the IP address indicated by the device to access the control panel. From here, you can now control the lamp remotely.</p>
+
+
+        </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">Powered by: Github Pages</span>
+        </div>
+    </footer>        
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/prism.js"></script>
+</body>
+</html>
